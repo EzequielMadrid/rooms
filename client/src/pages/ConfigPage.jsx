@@ -59,7 +59,7 @@ const ConfigPage = () => {
           ))}
         </section>
         {/* Chat Window Examples */}
-        <h3 className="text-lg font-semibold mb-3">Messenger Example</h3>
+        <h3 className="text-lg mb-3 tracking-wide">Messenger Example</h3>
         <section className="rounded-xl border border-base-300 overflow-hidden bg-base-100 shadow-lg">
           <div className="p-4 bg-base-200">
             <div className="max-w-lg mx-auto">
@@ -70,12 +70,14 @@ const ConfigPage = () => {
                       P
                     </div>
                     <div>
-                      <h3 className="font-medium text-sm">Sr. Parker</h3>
-                      <p className="text-xs text-base-content/70">Online</p>
+                      <h3 className="font-medium text-md">Sr. Parker</h3>
+                      <p className="text-xs text-base-content/70 font-mono">
+                        Online
+                      </p>
                     </div>
                   </div>
                 </header>
-                <main className="p-4 space-y-4 min-h-[200px] max-h-[200px] overflow-y-auto bg-base-100">
+                <main className="p-6 space-y-4 min-h-[200px] max-h-[200px] overflow-y-auto bg-base-100 font-mono">
                   {PREVIEW_MESSAGES.map((message) => (
                     <div
                       key={message.id}
@@ -93,7 +95,7 @@ const ConfigPage = () => {
                           }
                         `}
                       >
-                        <p className="text-sm">{message.content}</p>
+                        <p className="text-sm ">{message.content}</p>
                         <p
                           className={`
                             text-[10px] mt-1.5
@@ -114,7 +116,7 @@ const ConfigPage = () => {
                   <div className="flex gap-2">
                     <input
                       type="text"
-                      className="input input-bordered flex-1 text-sm h-10"
+                      className="input input-bordered flex-1 text-sm h-10 font-mono"
                       placeholder="Type a message..."
                       value="Example Message"
                       readOnly

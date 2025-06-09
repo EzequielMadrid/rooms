@@ -21,7 +21,7 @@ const ChatHeader = () => {
           </section>
           <section>
             <h3 className="font-medium">{selectedUser.fullName}</h3>
-            <p className="text-sm text-base-content/70">
+            <p className="text-sm font-mono text-base-content/70">
               {onlineUsers.includes(selectedUser._id) ? "Online" : "Offline"}
             </p>
           </section>

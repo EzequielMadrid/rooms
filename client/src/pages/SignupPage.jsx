@@ -4,13 +4,13 @@ import toast from "react-hot-toast";
 
 import { useAuthStore } from "../store/useAuthStore";
 import Patterns from "../components/Patterns";
+import prototypeImg from "../assets/prototype.gif";
 import {
   Eye,
   EyeOff,
   Loader2,
   Lock,
-  Mail,
-  BotMessageSquare,
+  ChevronsRight,
   CircleUser,
 } from "lucide-react";
 
@@ -47,11 +47,12 @@ const SignupPage = () => {
         <div className="w-full max-w-md space-y-8">
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
-              <div
-                className="size-12 rounded-xl bg-primary/10 flex items-center justify-center 
-              group-hover:bg-primary/20 transition-colors"
-              >
-                <BotMessageSquare className="size-6 text-primary" />
+              <div className="w-28 h-28 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <img
+                  src={prototypeImg}
+                  alt="prototype"
+                  className="w-24 h-24 rounded-full"
+                />{" "}
               </div>
               <h1 className="mt-2 text-2xl font-bold tracking-widest">
                 Hello there !
@@ -67,12 +68,10 @@ const SignupPage = () => {
                 <span className="label-text font-medium">Full Name</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <CircleUser className="size-5 text-base-content/40" />
-                </div>
+                <CircleUser className="absolute left-3 top-1/2 -translate-y-1/2 size-5 pointer-events-none z-10" />
                 <input
                   type="text"
-                  className={`input input-bordered w-full pl-10`}
+                  className="input input-bordered w-full pl-12 focus:outline-none "
                   placeholder="Peter Parker"
                   value={formData.fullName}
                   onChange={(e) =>
@@ -86,13 +85,11 @@ const SignupPage = () => {
                 <span className="label-text font-medium">Email</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="size-5 text-base-content/40" />
-                </div>
+                <ChevronsRight className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-base-content/40 pointer-events-none z-10" />
                 <input
                   type="email"
-                  className={`input input-bordered w-full pl-10`}
-                  placeholder="peter_NY@gmail.com"
+                  className="input input-bordered w-full pl-12 focus:outline-none"
+                  placeholder="peter_NY@example.com"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
@@ -102,12 +99,10 @@ const SignupPage = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
+                <span className="label-text font-medium">Pass</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="size-5 text-base-content/40" />
-                </div>
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-base-content/40 pointer-events-none z-10" />
                 <input
                   type={showPassword ? "text" : "password"}
                   className={`input input-bordered w-full pl-10`}

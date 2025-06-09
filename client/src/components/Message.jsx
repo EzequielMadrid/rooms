@@ -70,7 +70,7 @@ const Message = () => {
         <div className="flex-1 flex gap-2">
           <input
             type="text"
-            className="w-full input input-bordered rounded-lg input-sm sm:input-md"
+            className="w-full input input-bordered rounded-lg input-sm sm:input-md focus:outline-none"
             placeholder="Type anything..."
             value={text}
             onChange={(e) => setText(e.target.value)}
@@ -85,7 +85,7 @@ const Message = () => {
           <button
             type="button"
             className={`hidden sm:flex btn btn-circle
-                     ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+                     ${imagePreview ? "text-green-600" : "text-zinc-400"}`}
             onClick={() => fileInputRef.current?.click()}
           >
             <CircleChevronUp size={20} />

@@ -10,7 +10,9 @@ const FriendListSkeleton = () => {
       <header className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
           <Globe className="w-6 h-6" />
-          <span className="font-medium hidden lg:block">Global</span>
+          <span className="font-medium hidden lg:block tracking-widest">
+            Global
+          </span>
         </div>
       </header>
       <main className="overflow-y-auto w-full py-3">

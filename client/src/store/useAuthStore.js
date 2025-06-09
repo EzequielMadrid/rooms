@@ -10,7 +10,7 @@ const BASE_URL = "http://localhost:3000";
 export const useAuthStore = create((set, get) => ({
   authUser: null,
   isSigningUp: false,
-  isLoggingIn: false,
+  isSignin: false,
   isUpdatingProfile: false,
   isCheckingAuth: true,
   onlineUsers: [],
@@ -42,17 +42,18 @@ export const useAuthStore = create((set, get) => ({
       set({ isSigningUp: false });
     }
   },
+
   signin: async (data) => {
-    set({ isLoggingIn: true });
+    set({ isSignin: true });
     try {
-      const res = await axiosInstance.post("/auth/login", data);
+      const res = await axiosInstance.post("/auth/signin", data);
       set({ authUser: res.data });
       toast.success("Logged in successfully");
       get().connectSocket();
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
-      set({ isLoggingIn: false });
+      set({ isSignin: false });
     }
   },
 
