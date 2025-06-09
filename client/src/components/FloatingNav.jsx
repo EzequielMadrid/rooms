@@ -32,18 +32,17 @@ const FloatingNav = () => {
               to={"/settings"}
               className={`btn btn-sm gap-2 transition-colors `}
             >
-              <Cog className="w-4 h-4" />
+              <Cog className="size-4" />
               <span className="hidden sm:inline">Styles</span>
             </Link>
             {authUser && (
               <>
                 <Link to={"/avatar"} className={`btn btn-sm gap-2`}>
-                  <CircleUser className="size-5" />
+                  <CircleUser className="size-4" />
                   <span className="hidden sm:inline">Avatar</span>
                 </Link>
                 <button className="flex gap-2 items-center" onClick={logout}>
-                  <Hand className="size-5" />
-                  <span className="hidden sm:inline">Bye!</span>
+                  <Hand className="size-4 hover:size-5" />
                 </button>
               </>
             )}
