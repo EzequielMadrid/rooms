@@ -34,10 +34,21 @@ const SignupPage = () => {
     return true;
   };
 
+  const capitalizeFullName = (name) => {
+    return name
+      .split(" ")
+      .filter(Boolean)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const capitalizedFullName = capitalizeFullName(formData.fullName.trim());
     const success = validateForm();
-    if (success === true) signup(formData);
+    if (success === true) {
+      signup({ ...formData, fullName: capitalizedFullName });
+    }
   };
 
   return (
