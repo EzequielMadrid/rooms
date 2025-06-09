@@ -155,7 +155,7 @@ const SignupPage = () => {
           </div>
         </div>
       </div>
-      {/* Right side (only in Large Screens) */}
+      {/* Right side (only on Larger Screens) */}
       <Patterns
         title="SecreT RoomS"
         subtitle="Chat with Friends around the World!"

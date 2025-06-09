@@ -121,7 +121,7 @@ const SigninPage = () => {
           </div>
         </div>
       </div>
-      {/* Right side (only in Large Screens) */}
+      {/* Right side (only on Larger Screens) */}
       <Patterns
         title={"Welcome back!"}
         subtitle={
