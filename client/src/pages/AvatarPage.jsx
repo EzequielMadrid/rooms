@@ -57,9 +57,7 @@ const AvatarPage = () => {
               </label>
             </div>
             <p className="text-sm text-zinc-400">
-              {isUpdatingProfile
-                ? "Uploading..."
-                : "Click the camera icon to update your photo"}
+              {isUpdatingProfile ? "Uploading..." : "Choose your Pic"}
             </p>
           </section>
           <section className="space-y-6">
@@ -86,11 +84,11 @@ const AvatarPage = () => {
             <h2 className="text-lg font-medium  mb-4">User Info</h2>
             <div className="space-y-3 text-sm font-mono">
               <div className="flex items-center justify-between py-2 border-b border-zinc-700">
-                <span>Member Since</span>
+                <span>User Since</span>
                 <span>{authUser.createdAt?.split("T")[0]}</span>
               </div>
               <div className="flex items-center justify-between py-2">
-                <span>Account Status</span>
+                <span>User Status</span>
                 <span className="text-green-500">Active</span>
               </div>
             </div>
