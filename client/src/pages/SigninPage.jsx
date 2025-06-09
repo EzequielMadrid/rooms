@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 
 import { useAuthStore } from "../store/useAuthStore";
 import Patterns from "../components/Patterns";
@@ -11,83 +10,50 @@ import {
   Lock,
   Mail,
   BotMessageSquare,
-  CircleUser,
 } from "lucide-react";
 
-const SignupPage = () => {
+const SigninPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: "",
     email: "",
     password: "",
   });
-  const { signup, isSigningUp } = useAuthStore();
+  const { login, isLoggingIn } = useAuthStore();
 
-  const validateForm = () => {
-    if (!formData.fullName.trim()) return toast.error("Full name is required");
-    if (!formData.email.trim()) return toast.error("Email is required");
-    if (!/\S+@\S+\.\S+/.test(formData.email))
-      return toast.error("Invalid email format");
-    if (!formData.password) return toast.error("Pass is required");
-    if (formData.password.length < 6)
-      return toast.error("Pass must be at least 6 characters");
-    return true;
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const success = validateForm();
-    if (success === true) signup(formData);
+    login(formData);
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
+    <div className="h-screen grid lg:grid-cols-2">
       {/* Left side */}
       <div className="flex flex-col justify-center items-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group">
               <div
-                className="size-12 rounded-xl bg-primary/10 flex items-center justify-center 
-              group-hover:bg-primary/20 transition-colors"
+                className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20
+              transition-colors"
               >
-                <BotMessageSquare className="size-6 text-primary" />
+                <BotMessageSquare className="w-6 h-6 text-primary" />
               </div>
               <h1 className="mt-2 text-2xl font-bold -tracking-wider">
-                Hello there!
+                Welcome Back!
               </h1>
               <p className="text-base-content/60 -tracking-tight ">
-                Join our Community
+                Your People is waiting
               </p>
             </div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Full Name</span>
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <CircleUser className="size-5 text-base-content/40" />
-                </div>
-                <input
-                  type="text"
-                  className={`input input-bordered w-full pl-10`}
-                  placeholder="Peter Parker"
-                  value={formData.fullName}
-                  onChange={(e) =>
-                    setFormData({ ...formData, fullName: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-            <div className="form-control">
-              <label className="label">
                 <span className="label-text font-medium">Email</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Mail className="size-5 text-base-content/40" />
+                  <Mail className="h-5 w-5 text-base-content/40" />
                 </div>
                 <input
                   type="email"
@@ -106,7 +72,7 @@ const SignupPage = () => {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Lock className="size-5 text-base-content/40" />
+                  <Lock className="h-5 w-5 text-base-content/40" />
                 </div>
                 <input
                   type={showPassword ? "text" : "password"}
@@ -123,9 +89,9 @@ const SignupPage = () => {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeOff className="size-5 text-base-content/40" />
+                    <EyeOff className="h-5 w-5 text-base-content/40" />
                   ) : (
-                    <Eye className="size-5 text-base-content/40" />
+                    <Eye className="h-5 w-5 text-base-content/40" />
                   )}
                 </button>
               </div>
@@ -133,23 +99,23 @@ const SignupPage = () => {
             <button
               type="submit"
               className="btn btn-primary w-full"
-              disabled={isSigningUp}
+              disabled={isLoggingIn}
             >
-              {isSigningUp ? (
+              {isLoggingIn ? (
                 <>
-                  <Loader2 className="size-5 animate-spin" />
+                  <Loader2 className="h-5 w-5 animate-spin" />
                   Loading...
                 </>
               ) : (
-                "Create User"
+                "Sign in"
               )}
             </button>
           </form>
           <div className="text-center">
             <p className="text-base-content/60">
-              Already have an User?{" "}
-              <Link to="/signin" className="link link-primary">
-                Sign in
+              Don&apos;t have an User?{" "}
+              <Link to="/signup" className="link link-primary">
+                Create User
               </Link>
             </p>
           </div>
@@ -157,11 +123,13 @@ const SignupPage = () => {
       </div>
       {/* Right side (only in Large Screens) */}
       <Patterns
-        title="SecreT RoomS"
-        subtitle="Chat with Friends around the World!"
+        title={"Welcome back!"}
+        subtitle={
+          "Sign in to continue your conversations and catch up with your messages."
+        }
       />
     </div>
   );
 };
 
-export default SignupPage;
+export default SigninPage;

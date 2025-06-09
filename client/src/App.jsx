@@ -4,7 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuthStore } from "./store/useAuthStore";
 import { useThemeStore } from "./store/useThemeStore";
 import HubPage from "./pages/HubPage";
-import SignUpPage from "./pages/SignUpPage";
+import SignUpPage from "./pages/SignupPage";
 import SigninPage from "./pages/SigninPage";
 import ConfigPage from "./pages/ConfigPage";
 import AvatarPage from "./pages/AvatarPage";

@@ -1,7 +1,5 @@
 import React from "react";
 
-const AvatarPage = () => {
-  return <div>AvatarPage</div>;
-};
+const AvatarPage = () => {};
 
 export default AvatarPage;
