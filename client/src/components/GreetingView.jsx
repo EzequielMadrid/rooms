@@ -7,11 +7,11 @@ const GreetingView = () => {
       <div className="max-w-md text-center space-y-6">
         <div className="flex justify-center gap-4 mb-4">
           <div className="relative">
-            <div className="w-32 h-32 rounded-2xl bg-primary/10 flex items-center justify-center ">
+            <div className="w-42 h-32 rounded-2xl bg-primary/10 flex items-center justify-center ">
               <img
                 src={aliensImg}
                 alt="aliens"
-                className="w-28 h-28 rounded-xl"
+                className="w-38 h-28 rounded-xl"
               />
             </div>
           </div>

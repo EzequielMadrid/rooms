@@ -48,7 +48,6 @@ export const useAuthStore = create((set, get) => ({
       const res = await axiosInstance.post("/auth/login", data);
       set({ authUser: res.data });
       toast.success("Logged in successfully");
-
       get().connectSocket();
     } catch (error) {
       toast.error(error.response.data.message);
@@ -60,7 +59,6 @@ export const useAuthStore = create((set, get) => ({
   connectSocket: () => {
     const { authUser } = get();
     if (!authUser || get().socket?.connected) return;
-
     const socket = io(BASE_URL, {
       query: {
         userId: authUser._id,
@@ -70,9 +68,11 @@ export const useAuthStore = create((set, get) => ({
 
     socket.connect();
     set({ socket: socket });
-
     socket.on("getActiveFriends", (userIds) => {
       set({ onlineUsers: userIds });
+    });
+    socket.on("connect_error", (err) => {
+      console.error("Socket connection error:", err);
     });
   },
   disconnectSocket: () => {
@@ -90,6 +90,17 @@ export const useAuthStore = create((set, get) => ({
       toast.error(error.response.data.message);
     } finally {
       set({ isUpdatingAvatar: false });
+    }
+  },
+
+  logout: async () => {
+    try {
+      await axiosInstance.post("/auth/logout");
+      set({ authUser: null });
+      toast.success("See you soon Dude!");
+      get().disconnectSocket();
+    } catch (error) {
+      toast.error(error.response.data.message);
     }
   },
 }));

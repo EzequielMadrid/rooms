@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { useAuthStore } from "../store/useAuthStore";
 import chipsImg from "../assets/chips.gif";
-import { LogOut, Cog, CircleUser } from "lucide-react";
+import { Hand, Cog, CircleUser } from "lucide-react";
 
 const FloatingNav = () => {
   const { logout, authUser } = useAuthStore();
@@ -42,8 +42,8 @@ const FloatingNav = () => {
                   <span className="hidden sm:inline">Avatar</span>
                 </Link>
                 <button className="flex gap-2 items-center" onClick={logout}>
-                  <LogOut className="size-5" />
-                  <span className="hidden sm:inline">Logout</span>
+                  <Hand className="size-5" />
+                  <span className="hidden sm:inline">Bye!</span>
                 </button>
               </>
             )}
