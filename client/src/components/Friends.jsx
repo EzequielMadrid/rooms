@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useChatStore } from "../store/useChatStore";
 import { useAuthStore } from "../store/useAuthStore";
 
-import SidebarSkeleton from "./skeletons/SidebarSkeleton";
-import { Users } from "lucide-react";
+import FriendListSkeleton from "./skeletons/FriendListSkeleton";
+import { Globe } from "lucide-react";
 
 export const Friends = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } =
@@ -20,7 +20,7 @@ export const Friends = () => {
     ? users.filter((user) => onlineUsers.includes(user._id))
     : users;
 
-  if (isUsersLoading) return <SidebarSkeleton />;
+  if (isUsersLoading) return <FriendListSkeleton />;
 
   return (
     <aside className="h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200">

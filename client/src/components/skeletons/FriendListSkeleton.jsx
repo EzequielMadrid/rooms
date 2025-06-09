@@ -16,14 +16,14 @@ const FriendListSkeleton = () => {
       <main className="overflow-y-auto w-full py-3">
         {skeletonContacts.map((_, idx) => (
           <div key={idx} className="w-full p-3 flex items-center gap-3">
-            <section className="relative mx-auto lg:mx-0">
+            <div className="relative mx-auto lg:mx-0">
               <div className="skeleton size-12 rounded-full" />
-            </section>
+            </div>
             {/* (only on Larger Screens */}
-            <section className="hidden lg:block text-left min-w-0 flex-1">
+            <div className="hidden lg:block text-left min-w-0 flex-1">
               <div className="skeleton h-4 w-32 mb-2" />
               <div className="skeleton h-3 w-16" />
-            </section>
+            </div>
           </div>
         ))}
       </main>
