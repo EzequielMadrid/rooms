@@ -9,7 +9,7 @@ const FriendListSkeleton = () => {
       {/*  */}
       <header className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
-          <Users className="w-6 h-6" />
+          <Globe className="w-6 h-6" />
           <span className="font-medium hidden lg:block">Global</span>
         </div>
       </header>

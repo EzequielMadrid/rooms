@@ -21,6 +21,7 @@ const PREVIEW_MESSAGES = [
 
 const ConfigPage = () => {
   const { theme, setTheme } = useThemeStore();
+
   return (
     <div className="min-h-screen container mx-auto px-4 pt-20 max-w-5xl">
       <div className="space-y-6">
