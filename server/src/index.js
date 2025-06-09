@@ -34,7 +34,8 @@ app.use("/api/messages", msgRoutes);
 // For Production
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/dist")));
-  app.get("*", (req, res) => {
+  //! For any non-API route, serve index.html to support client-side routing
+  app.get(/^\/(?!api).*/, (req, res) => {
     res.sendFile(path.join(__dirname, "../client", "dist", "index.html"));
   });
 }
