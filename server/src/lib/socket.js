@@ -26,13 +26,14 @@ io.on("connection", (socket) => {
     };
   }
   console.log(`${username} is Online`);
-  io.emit("getFriends", Object.keys(userSocketMap));
+
+  io.emit("getActiveFriends", Object.keys(userSocketMap));
 
   socket.on("disconnect", () => {
     console.log(`${username} is Offline`);
     // Remove the user from the userSocketMap when they
     delete userSocketMap[userId];
-    io.emit("getFriends", Object.keys(userSocketMap));
+    io.emit("getActiveFriends", Object.keys(userSocketMap));
   });
 });
 

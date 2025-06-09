@@ -46,7 +46,7 @@ function App() {
         />
         <Route path="/settings" element={<ConfigPage />} />
         <Route
-          path="/profile"
+          path="/avatar"
           element={authUser ? <AvatarPage /> : <Navigate to="/login" />}
         />
       </Routes>
