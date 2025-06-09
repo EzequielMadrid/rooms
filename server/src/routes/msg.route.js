@@ -1,15 +1,15 @@
 import express from "express";
 import { protectRoute } from "../middleware/auth.middleware.js";
 import {
-  getMsgs,
-  getUsersForFriends,
-  sendMsg,
-} from "../controllers/message.controller.js";
+  getMessages,
+  getFriends,
+  sendMessage,
+} from "../controllers/msg.controller.js";
 
 const router = express.Router();
 
-router.get("/users", protectRoute, getUsersForFriends);
-router.get("/:id", protectRoute, getMsgs);
-router.post("/send/:id", protectRoute, sendMsg);
+router.get("/users", protectRoute, getFriends);
+router.get("/:id", protectRoute, getMessages);
+router.post("/send/:id", protectRoute, sendMessage);
 
 export default router;
