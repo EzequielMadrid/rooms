@@ -84,8 +84,9 @@ const Message = () => {
           />
           <button
             type="button"
-            className={`hidden sm:flex btn btn-circle
-                     ${imagePreview ? "text-green-600" : "text-zinc-400"}`}
+            className={`flex btn btn-circle ${
+              imagePreview ? "text-green-600" : "text-zinc-400"
+            }`}
             onClick={() => fileInputRef.current?.click()}
           >
             <CircleChevronUp size={20} />
