@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
+import FloatingNav from "./components/FloatingNav";
 import { useAuthStore } from "./store/useAuthStore";
 import { useThemeStore } from "./store/useThemeStore";
 import HubPage from "./pages/HubPage";
@@ -30,11 +31,11 @@ function App() {
 
   return (
     <div data-theme={theme}>
-      <Navbar />
+      <FloatingNav />
       <Routes>
         <Route
           path="/"
-          element={authUser ? <HubPage /> : <Navigate to="/login" />}
+          element={authUser ? <HubPage /> : <Navigate to="/signin" />}
         />
         <Route
           path="/signup"
@@ -47,7 +48,7 @@ function App() {
         <Route path="/settings" element={<ConfigPage />} />
         <Route
           path="/avatar"
-          element={authUser ? <AvatarPage /> : <Navigate to="/login" />}
+          element={authUser ? <AvatarPage /> : <Navigate to="/signin" />}
         />
       </Routes>
       <Toaster />

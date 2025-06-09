@@ -38,10 +38,10 @@ const SigninPage = () => {
               >
                 <BotMessageSquare className="w-6 h-6 text-primary" />
               </div>
-              <h1 className="mt-2 text-2xl font-bold -tracking-wider">
-                Welcome Back!
+              <h1 className="mt-2 text-2xl font-bold tracking-widest">
+                Hello there !
               </h1>
-              <p className="text-base-content/60 -tracking-tight ">
+              <p className="text-base-content/60 tracking-wider">
                 Your People is waiting
               </p>
             </div>
@@ -123,7 +123,7 @@ const SigninPage = () => {
       </div>
       {/* Right side (only on Larger Screens) */}
       <Patterns
-        title={"Welcome back!"}
+        title={"Technology of the Future"}
         subtitle={
           "Sign in to continue your conversations and catch up with your messages."
         }

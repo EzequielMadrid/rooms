@@ -5,7 +5,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import FriendListSkeleton from "./skeletons/FriendListSkeleton";
 import { Globe } from "lucide-react";
 
-export const Friends = () => {
+const Friends = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } =
     useChatStore();
 
@@ -50,7 +50,8 @@ export const Friends = () => {
             key={user._id}
             onClick={() => setSelectedUser(user)}
             className={`
-              w-full p-3 flex items-center gap-3 hover:bg-base-300 transition-colors
+              w-full p-3 flex items-center gap-3
+              hover:bg-base-300 transition-colors
               ${
                 selectedUser?._id === user._id
                   ? "bg-base-300 ring-1 ring-base-300"
@@ -60,7 +61,7 @@ export const Friends = () => {
           >
             <div className="relative mx-auto lg:mx-0">
               <img
-                src={user.profilePic || "/avatar.gif"}
+                src={user.profilePic || "/avatar.png"}
                 alt={user.name}
                 className="size-12 object-cover rounded-full"
               />
@@ -89,3 +90,4 @@ export const Friends = () => {
     </aside>
   );
 };
+export default Friends;

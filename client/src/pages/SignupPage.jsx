@@ -53,10 +53,10 @@ const SignupPage = () => {
               >
                 <BotMessageSquare className="size-6 text-primary" />
               </div>
-              <h1 className="mt-2 text-2xl font-bold -tracking-wider">
-                Hello there!
+              <h1 className="mt-2 text-2xl font-bold tracking-widest">
+                Hello there !
               </h1>
-              <p className="text-base-content/60 -tracking-tight ">
+              <p className="text-base-content/60 tracking-wider">
                 Join our Community
               </p>
             </div>
@@ -157,7 +157,7 @@ const SignupPage = () => {
       </div>
       {/* Right side (only on Larger Screens) */}
       <Patterns
-        title="SecreT RoomS"
+        title={"Technology of the Future"}
         subtitle="Chat with Friends around the World!"
       />
     </div>

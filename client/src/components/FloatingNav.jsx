@@ -17,7 +17,7 @@ const FloatingNav = () => {
               to="/"
               className="flex items-center gap-2.5 hover:opacity-80 transition-all"
             >
-              <div className="w-32 h-4 rounded-2xl bg-primary/30 flex items-center justify-center ">
+              <div className="w-32 h-6 rounded-2xl bg-primary/30 flex items-center justify-center ">
                 <img
                   src={chipsImg}
                   alt="Alien"
@@ -37,7 +37,7 @@ const FloatingNav = () => {
             </Link>
             {authUser && (
               <>
-                <Link to={"/profile"} className={`btn btn-sm gap-2`}>
+                <Link to={"/avatar"} className={`btn btn-sm gap-2`}>
                   <CircleUser className="size-5" />
                   <span className="hidden sm:inline">Avatar</span>
                 </Link>
