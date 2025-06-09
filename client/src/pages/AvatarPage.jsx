@@ -3,7 +3,7 @@ import { useAuthStore } from "../store/useAuthStore";
 import { Camera, Mail, CircleUser } from "lucide-react";
 
 const AvatarPage = () => {
-  const { authUser, isUpdatingProfile, updateProfile } = useAuthStore();
+  const { authUser, isUpdatingAvatar, updateAvatar } = useAuthStore();
   const [selectedImg, setSelectedImg] = useState(null);
 
   const handleImageUpload = async (e) => {
@@ -14,7 +14,7 @@ const AvatarPage = () => {
     reader.onload = async () => {
       const base64Image = reader.result;
       setSelectedImg(base64Image);
-      await updateProfile({ profilePic: base64Image });
+      await updateAvatar({ profilePic: base64Image });
     };
   };
 
@@ -40,9 +40,7 @@ const AvatarPage = () => {
                   bg-base-content hover:scale-105
                   p-2 rounded-full cursor-pointer 
                   transition-all duration-200
-                  ${
-                    isUpdatingProfile ? "animate-pulse pointer-events-none" : ""
-                  }
+                  ${isUpdatingAvatar ? "animate-pulse pointer-events-none" : ""}
                 `}
               >
                 <Camera className="w-5 h-5 text-base-200" />
@@ -52,12 +50,12 @@ const AvatarPage = () => {
                   className="hidden"
                   accept="image/*"
                   onChange={handleImageUpload}
-                  disabled={isUpdatingProfile}
+                  disabled={isUpdatingAvatar}
                 />
               </label>
             </div>
             <p className="text-sm text-zinc-400">
-              {isUpdatingProfile ? "Uploading..." : "Choose your Pic"}
+              {isUpdatingAvatar ? "Uploading..." : "Choose your Pic"}
             </p>
           </section>
           <section className="space-y-6">

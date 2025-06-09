@@ -42,7 +42,6 @@ export const useAuthStore = create((set, get) => ({
       set({ isSigningUp: false });
     }
   },
-
   signin: async (data) => {
     set({ isLoggingIn: true });
     try {
@@ -55,20 +54,6 @@ export const useAuthStore = create((set, get) => ({
       toast.error(error.response.data.message);
     } finally {
       set({ isLoggingIn: false });
-    }
-  },
-
-  updateAvatar: async (data) => {
-    set({ isUpdatingAvatar: true });
-    try {
-      const res = await axiosInstance.put("/auth/update-avatar", data);
-      set({ authUser: res.data });
-      toast.success("Avatar updated");
-    } catch (error) {
-      console.log("error in update avatar:", error);
-      toast.error(error.response.data.message);
-    } finally {
-      set({ isUpdatingAvatar: false });
     }
   },
 
@@ -90,8 +75,21 @@ export const useAuthStore = create((set, get) => ({
       set({ onlineUsers: userIds });
     });
   },
-
   disconnectSocket: () => {
     if (get().socket?.connected) get().socket.disconnect();
+  },
+
+  updateAvatar: async (data) => {
+    set({ isUpdatingAvatar: true });
+    try {
+      const res = await axiosInstance.put("/auth/update-avatar", data);
+      set({ authUser: res.data });
+      toast.success("Avatar updated");
+    } catch (error) {
+      console.log("error in update avatar:", error);
+      toast.error(error.response.data.message);
+    } finally {
+      set({ isUpdatingAvatar: false });
+    }
   },
 }));
