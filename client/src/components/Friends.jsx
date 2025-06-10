@@ -4,11 +4,11 @@ import { useAuthStore } from "../store/useAuthStore";
 
 import FriendListSkeleton from "./skeletons/FriendListSkeleton";
 import { Globe } from "lucide-react";
+import "@fontsource-variable/orbitron";
 
 const Friends = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } =
     useChatStore();
-
   const { onlineUsers } = useAuthStore();
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
 
@@ -31,7 +31,9 @@ const Friends = () => {
       <div className="border-b border-base-300 w-full p-5">
         <section className="flex items-center gap-2">
           <Globe className="size-6" />
-          <span className="font-medium tracking-widest">Global</span>
+          <span className="text-sm tracking-widest leading-none font-special-1">
+            GLOBAL
+          </span>
         </section>
         <section className="mt-3 flex items-center gap-2">
           <label className="cursor-pointer flex items-center gap-2">
@@ -41,7 +43,6 @@ const Friends = () => {
               onChange={(e) => setShowOnlineOnly(e.target.checked)}
               className="checkbox checkbox-sm"
             />
-            <span className="text-sm font-mono">Online</span>
           </label>
           <span className="text-xs text-zinc-500 font-mono">
             ({onlineUsers.length - 1} online)
@@ -53,7 +54,7 @@ const Friends = () => {
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}
-            className={`w-full p-3 flex items-center gap-1.5 hover:bg-base-300 hover:rounded-br-full transition-colors
+            className={`w-full p-3 flex items-center gap-1.5 rounded-br-full hover:bg-base-300 transition-colors
             ${
               selectedUser?._id === user._id
                 ? "bg-base-300 ring-1 ring-base-300"
@@ -83,7 +84,7 @@ const Friends = () => {
           </button>
         ))}
         {filteredUsers.length === 0 && (
-          <div className="text-center text-zinc-500 py-4">
+          <div className="text-xs tracking-wider text-center text-zinc-500 py-4">
             No one right now...
           </div>
         )}
