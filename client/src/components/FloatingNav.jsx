@@ -24,8 +24,8 @@ const FloatingNav = () => {
                   className="w-28 h-4 rounded-xl"
                 />
               </div>
-              <h2 className="text-xs tracking-wide">SecreT RoomS</h2>
             </Link>
+            <h2 className="text-xs tracking-wide">SecreT RoomS</h2>
           </div>
           <div className="flex items-center gap-2">
             <Link

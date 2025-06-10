@@ -47,7 +47,11 @@ const ChatBox = () => {
   }
 
   return (
-    <div className="flex-1 flex flex-col overflow-auto">
+    <div
+      className={`flex-1 flex flex-col overflow-auto ${
+        window.innerWidth < 1024 ? "w-full" : ""
+      }`}
+    >
       <ChatHeader />
       <main className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((x) => (
