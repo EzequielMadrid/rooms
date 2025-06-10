@@ -53,7 +53,7 @@ const Friends = () => {
           <button
             key={user._id}
             onClick={() => setSelectedUser(user)}
-            className={`w-full p-3 flex items-center gap-3 hover:bg-base-300 transition-colors
+            className={`w-full p-3 flex items-center gap-1.5 hover:bg-base-300 hover:rounded-br-full transition-colors
             ${
               selectedUser?._id === user._id
                 ? "bg-base-300 ring-1 ring-base-300"
@@ -73,8 +73,10 @@ const Friends = () => {
               )}
             </div>
             <div className="flex flex-col text-left min-w-0">
-              <div className="font-medium truncate">{user.fullName}</div>
-              <div className="text-sm font-mono text-zinc-400">
+              <div className="text-sm font-medium truncate">
+                {user.fullName}
+              </div>
+              <div className="text-xs font-mono text-zinc-400">
                 {onlineUsers.includes(user._id) ? "Online" : "Offline"}
               </div>
             </div>

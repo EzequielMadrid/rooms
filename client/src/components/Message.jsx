@@ -7,8 +7,9 @@ import { CircleChevronUp, CircleArrowRight, CircleX } from "lucide-react";
 const Message = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
-  const fileInputRef = useRef(null);
   const { sendMessage } = useChatStore();
+  const fileInputRef = useRef(null);
+  const textareaRef = useRef(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -68,13 +69,23 @@ const Message = () => {
       )}
       <form onSubmit={handleSendMessage} className="flex items-center gap-2">
         <div className="flex-1 flex gap-2">
-          <input
-            type="text"
-            className="w-full input input-bordered rounded-lg input-md sm:input-md focus:outline-none font-mono"
+          <textarea
+            ref={textareaRef}
+            className="w-full textarea textarea-bordered rounded-lg textarea-md sm:textarea-md focus:outline-none font-mono resize-none"
             placeholder="Type anything..."
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              setText(e.target.value);
+              if (textareaRef.current) {
+                textareaRef.current.style.height = "auto";
+                textareaRef.current.style.height =
+                  textareaRef.current.scrollHeight + "px";
+              }
+            }}
+            rows={1}
+            style={{ maxHeight: "100px", overflowY: "auto" }}
           />
+
           <input
             type="file"
             accept="image/*"

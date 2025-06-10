@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/monaspace-krypton": "^5.2.5",
     "@tailwindcss/vite": "^4.1.8",
     "axios": "^1.9.0",
     "lucide-react": "^0.513.0",
