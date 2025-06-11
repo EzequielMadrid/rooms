@@ -67,25 +67,24 @@ const Message = () => {
           </div>
         </div>
       )}
-      <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-        <div className="flex-1 flex gap-2">
-          <textarea
-            ref={textareaRef}
-            className="w-full textarea textarea-bordered rounded-lg textarea-md sm:textarea-md focus:outline-none font-mono resize-none"
-            placeholder="Type anything..."
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value);
-              if (textareaRef.current) {
-                textareaRef.current.style.height = "auto";
-                textareaRef.current.style.height =
-                  textareaRef.current.scrollHeight + "px";
-              }
-            }}
-            rows={1}
-            style={{ maxHeight: "100px", overflowY: "auto" }}
-          />
-
+      <form onSubmit={handleSendMessage} className="flex flex-col gap-2 w-full">
+        <textarea
+          ref={textareaRef}
+          className="w-full textarea textarea-bordered rounded-lg textarea-md sm:textarea-md focus:outline-none font-mono resize-none"
+          placeholder="Type anything..."
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+            if (textareaRef.current) {
+              textareaRef.current.style.height = "auto";
+              textareaRef.current.style.height =
+                textareaRef.current.scrollHeight + "px";
+            }
+          }}
+          rows={1}
+          style={{ maxHeight: "100px", overflowY: "auto" }}
+        />
+        <div className="flex gap-2 items-center justify-end">
           <input
             type="file"
             accept="image/*"
@@ -95,21 +94,21 @@ const Message = () => {
           />
           <button
             type="button"
-            className={`flex btn btn-circle ${
+            className={`btn btn-circle ${
               imagePreview ? "text-green-600" : "text-zinc-400"
             }`}
             onClick={() => fileInputRef.current?.click()}
           >
             <CircleChevronUp size={20} />
           </button>
+          <button
+            type="submit"
+            className="btn btn-sm btn-circle"
+            disabled={!text.trim() && !imagePreview}
+          >
+            <CircleArrowRight size={22} />
+          </button>
         </div>
-        <button
-          type="submit"
-          className="btn btn-sm btn-circle"
-          disabled={!text.trim() && !imagePreview}
-        >
-          <CircleArrowRight size={22} />
-        </button>
       </form>
     </div>
   );
