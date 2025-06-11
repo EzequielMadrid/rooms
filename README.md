@@ -1,4 +1,4 @@
-# 📱 [SecreT R00Ms] 📱
+# 📱
 
 ### Chat Views
 
