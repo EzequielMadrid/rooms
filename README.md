@@ -16,10 +16,10 @@
 
 ---
 
-### Config
+### Styles
 
 <div align="center">
-  <img src="./client/public/config.png" alt="config" width="330" />
+  <img src="./client/public/styles.png" alt="styles" width="330" />
 </div>
 
 ---
@@ -32,10 +32,10 @@
 
 ---
 
-### Styles
+### Config
 
 <div align="center">
-  <img src="./client/public/styles.png" alt="styles" width="330" />
+  <img src="./client/public/config.png" alt="config" width="330" />
 </div>
 
 ---
