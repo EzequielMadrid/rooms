@@ -2,30 +2,30 @@
 
 ### Chat Views
 
-![chat](./client/public/chatbox.png)
+<img src="./client/public/chatbox.png" alt="chat" width="300" />
 
 ---
 
 ### Signin / Signup
 
-![auth](./client/public/auth.png)
+<img src="./client/public/auth.png" alt="auth" width="300" />
 
 ---
 
 ### Config
 
-![chat](./client/public/config.png)
+<img src="./client/public/config.png" alt="config" width="300" />
 
 ---
 
 ### Welcome
 
-![chat](./client/public/welcome.png)
+<img src="./client/public/welcome.png" alt="welcome" width="300" />
 
 ---
 
 ### Styles
 
-![chat](./client/public/styles.png)
+<img src="./client/public/styles.png" alt="styles" width="300" />
 
 ---
