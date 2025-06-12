@@ -6,6 +6,10 @@
   <img src="./client/public/chatbox.png" alt="chat" width="300" />
 </div>
 
+---
+
+---
+
 ### Auth
 
 <div align="center">
@@ -14,11 +18,15 @@
 
 ---
 
+---
+
 ### Onboarding
 
 <div align="center">
   <img src="./client/public/onboarding.png" alt="onboarding" width="300" />
 </div>
+
+---
 
 ---
 
@@ -37,5 +45,3 @@
 <div align="center">
   <img src="./client/public/styles.png" alt="styles" width="300" />
 </div>
-
----
