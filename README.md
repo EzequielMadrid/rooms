@@ -20,6 +20,14 @@
 
 ---
 
+### Onboarding
+
+<div align="center">
+  <img src="./client/public/onboarding.png" alt="onboarding" />
+</div>
+
+---
+
 ---
 
 ### Config
