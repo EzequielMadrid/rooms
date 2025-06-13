@@ -1,9 +1,9 @@
 # 📱
 
-### ChatBox
+### Styles
 
 <div align="center">
-  <img src="./client/public/chatbox.png" alt="chat" />
+  <img src="./client/public/styles.png" alt="styles" />
 </div>
 
 ---
@@ -30,6 +30,16 @@
 
 ---
 
+### ChatBox
+
+<div align="center">
+  <img src="./client/public/chatbox.png" alt="chat" />
+</div>
+
+---
+
+---
+
 ### Config
 
 <div align="center">
@@ -39,9 +49,3 @@
 ---
 
 ---
-
-### Styles
-
-<div align="center">
-  <img src="./client/public/styles.png" alt="styles" />
-</div>
