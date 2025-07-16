@@ -2,7 +2,7 @@ import React from "react";
 import aliensImg from "../assets/aliens.gif";
 import "@fontsource/monaspace-krypton";
 
-const GreetingView = ({ username }) => {
+const GreetingView = ({ fullname }) => {
   return (
     <div className="w-full flex flex-1 flex-col items-center justify-center p-6 bg-base-100/50">
       <div className="max-w-md text-center space-y-6 font-special">
@@ -18,7 +18,7 @@ const GreetingView = ({ username }) => {
           </div>
         </div>
         <h2 className="text-sm flex items-center justify-center gap-2">
-          Welcome <span className="font-bold">{username}</span>
+          Welcome <span className="font-bold">{fullname}</span>
         </h2>
       </div>
     </div>
