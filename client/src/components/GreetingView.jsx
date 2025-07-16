@@ -23,7 +23,7 @@ const GreetingView = () => {
           <span>SecreT RoomS</span>
         </h2>
         <p className="text-xs md:text-lg text-base-content/60">
-          Chat with your Friends and Family or Discover New People!
+          Chat with your Friends and Family or Discover New sssssssssPeople!
         </p>
       </div>
     </div>
