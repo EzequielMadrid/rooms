@@ -65,7 +65,7 @@ const Friends = () => {
           >
             <div className="relative">
               <img
-                src={user.profilePic || "/default-avatar.png"}
+                src={user.profilePic || "/avatar.gif"}
                 alt={user.fullName}
                 className="w-10 h-10 rounded-full object-cover"
               />
@@ -73,7 +73,7 @@ const Friends = () => {
                 <span className="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full ring-2 ring-zinc-900" />
               )}
             </div>
-            <div className="flex flex-col text-left min-w-0">
+            <div className="hidden lg:flex flex-col text-left min-w-0">
               <div className="text-sm font-medium truncate">
                 {user.fullName}
               </div>
