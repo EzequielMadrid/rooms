@@ -8,11 +8,11 @@ const GreetingView = ({ username }) => {
       <div className="max-w-md text-center space-y-6 font-special">
         <div className="flex justify-center">
           <div className="relative">
-            <div className="w-64 rounded-2xl flex items-center justify-center">
+            <div className="w-64 h-32 rounded-2xl flex items-center justify-center">
               <img
                 src={aliensImg}
                 alt="aliens"
-                className="h-full object-contain rounded-xl"
+                className="object-contain rounded-xl"
               />
             </div>
           </div>
@@ -20,9 +20,6 @@ const GreetingView = ({ username }) => {
         <h2 className="text-sm flex items-center justify-center gap-2">
           Welcome <span className="font-bold">{username}</span>
         </h2>
-        <p className="text-xs md:text-lg text-base-content/60">
-          Chat with your Friends and Family or Discover New People!
-        </p>
       </div>
     </div>
   );

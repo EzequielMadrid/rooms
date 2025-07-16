@@ -7,7 +7,7 @@ import ChatBox from "../components/ChatBox";
 
 const HubPage = () => {
   const { selectedUser } = useChatStore();
-  const { user } = useAuthStore();
+  const { authUser } = useAuthStore();
 
   return (
     <div className="h-screen bg-base-200">
@@ -16,7 +16,7 @@ const HubPage = () => {
           <div className="flex h-full rounded-lg overflow-hidden">
             <Friends />
             {!selectedUser ? (
-              <GreetingView username={user?.username || "Guest"} />
+              <GreetingView username={authUser?.fullName || "Guest"} />
             ) : (
               <ChatBox />
             )}
