@@ -12,7 +12,7 @@ const GreetingView = () => {
               <img
                 src={aliensImg}
                 alt="aliens"
-                className="w-22 h-14 sm:w-38 sm:h-28 rounded-xl"
+                className="w-28 h-18 sm:w-38 sm:h-28 rounded-xl"
               />
             </div>
           </div>
