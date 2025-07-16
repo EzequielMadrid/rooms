@@ -8,17 +8,19 @@ const GreetingView = () => {
       <div className="max-w-md text-center space-y-6 font-special">
         <div className="flex justify-center">
           <div className="relative">
-            <div className="w-28 h-20 sm:w-42 sm:h-32 rounded-2xl bg-primary/10 flex items-center justify-center">
+            <div className="w-64 sm:w-96 aspect-[16/9] rounded-2xl bg-primary/10 flex items-center justify-center">
               <img
                 src={aliensImg}
                 alt="aliens"
-                className="w-28 h-18 sm:w-38 sm:h-28 rounded-xl"
+                className="h-full object-contain rounded-xl"
               />
             </div>
           </div>
         </div>
-        <h2 className="text-2xl font-bold">
-          <span className="text-sm">Welcome to</span> SecreT RoomS
+
+        <h2 className="text-xl font-bold">
+          <span className="text-sm">Welcome to</span>
+          <span>SecreT RoomS</span>
         </h2>
         <p className="text-xs md:text-lg text-base-content/60">
           Chat with your Friends and Family or Discover New People!
