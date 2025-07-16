@@ -18,12 +18,11 @@ const GreetingView = () => {
           </div>
         </div>
 
-        <h2 className="text-xl font-bold">
-          <span className="text-sm">Welcome to</span>
-          <span>SecreT RoomS</span>
-        </h2>
+        <h2 className="text-sm">Welcome to</h2>
+        <p className="text-xl font-bold">SecreT RoomS</p>
+
         <p className="text-xs md:text-lg text-base-content/60">
-          Chat with your Friends and Family or Discover New sssssssssPeople!
+          Chat with your Friends and Family or Discover New People!
         </p>
       </div>
     </div>
