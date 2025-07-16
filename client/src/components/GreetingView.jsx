@@ -18,7 +18,7 @@ const GreetingView = ({ fullname }) => {
           </div>
         </div>
         <h2 className="text-sm flex items-center justify-center gap-2">
-          Welcome <span className="font-bold">{fullname}</span>
+          Welcome <span className="font-bold text-lg">{fullname}</span>
         </h2>
       </div>
     </div>
