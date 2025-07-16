@@ -13,7 +13,11 @@ const HubPage = () => {
         <div className="bg-base-100 rounded-lg shadow-cl w-full max-w-6xl h-[calc(100vh-8rem)]">
           <div className="flex h-full rounded-lg overflow-hidden">
             <Friends />
-            {!selectedUser ? <GreetingView /> : <ChatBox />}
+            {!selectedUser ? (
+              <GreetingView username={selectedUser?.name || "Guest"} />
+            ) : (
+              <ChatBox />
+            )}
           </div>
         </div>
       </div>
