@@ -1,11 +1,13 @@
 import React from "react";
 import { useChatStore } from "../store/useChatStore";
+import { useAuthStore } from "../store/useAuthStore";
 import Friends from "../components/Friends";
 import GreetingView from "../components/GreetingView";
 import ChatBox from "../components/ChatBox";
 
 const HubPage = () => {
   const { selectedUser } = useChatStore();
+  const { user } = useAuthStore();
 
   return (
     <div className="h-screen bg-base-200">
@@ -14,7 +16,7 @@ const HubPage = () => {
           <div className="flex h-full rounded-lg overflow-hidden">
             <Friends />
             {!selectedUser ? (
-              <GreetingView username={selectedUser?.name || "Guest"} />
+              <GreetingView username={user?.username || "Guest"} />
             ) : (
               <ChatBox />
             )}
