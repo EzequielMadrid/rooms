@@ -31,7 +31,7 @@ const Friends = () => {
       <div className="border-b border-base-300 w-full p-5">
         <section className="flex items-center gap-2">
           <Globe className="size-6" />
-          <span className="text-sm tracking-widest leading-none font-special-1">
+          <span className="text-sm tracking-widest leading-none font-special-1 hidden md:inline">
             GLOBAL
           </span>
         </section>
@@ -44,11 +44,12 @@ const Friends = () => {
               className="checkbox checkbox-sm"
             />
           </label>
-          <span className="text-xs text-zinc-500 font-mono">
+          <span className="text-xs text-zinc-500 font-mono hidden md:inline">
             ({onlineUsers.length - 1} online)
           </span>
         </section>
       </div>
+
       <div className="overflow-y-auto w-full py-3">
         {filteredUsers.map((user) => (
           <button
