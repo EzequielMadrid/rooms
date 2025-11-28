@@ -1,9 +1,9 @@
 # 📱
 
-### Styles
+### Profile Settings
 
 <div align="center">
-  <img src="./client/public/styles.png" alt="styles" />
+  <img src="./client/public/config.png" alt="config" />
 </div>
 
 ---
@@ -40,10 +40,10 @@
 
 ---
 
-### Config
+### App Styles
 
 <div align="center">
-  <img src="./client/public/config.png" alt="config" />
+  <img src="./client/public/styles.png" alt="styles" />
 </div>
 
 ---
